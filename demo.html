@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 必须有网络  import pip install xxx -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!-- <script src="./vue.js"></script> -->
+</head>
+<body>
+    <!-- div#app tab -->
+    <!-- <div id="app"> -->
+    <div class="app">
+        <p>{{username}}</p>
+        <p>{{hello_vue()}}</p>
+        <p>{{school.name}}</p>
+        <p>{{school.mobile}}</p>
+        <p>{{address[1]}}</p>
+    </div>
+    <!-- 不会显示居然 -->
+    <p>{{username}}</p>
+
+    <!-- <div id="app1">
+        {{ name }}
+    </div> -->
+    
+    <script>
+        // 创建了vue对象
+        new Vue({
+            // 只能绑定到双标签
+            el: '.app',
+            data: {
+                username: '居然',
+                school: {
+                    'name': '逻辑',
+                    'mobile': 'xxx-xxx-xx'
+                },
+                address:['cs', 'bj', 'sh']
+            },
+            methods:{
+                // def hello_vue
+                hello_vue:function(){
+                    return '晚上好' + this.username
+                }
+            }
+        });  
+        
+        // new Vue({
+        //     el: '#app1',
+        //     data: {
+        //         name: 'juran'
+        //     }
+        // })
+   </script>
+</body>
+</html>
